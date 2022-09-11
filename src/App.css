@@ -1,6 +1,11 @@
 .btn-brand {
-  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%) !important;
-    color: white;
+  background: violet !important;
+  color: #ffffff !important;
+  border: 2px solid violet !important;
+}
+.btn-outline-brand{
+  color: #ffffff !important;
+  border: 2px solid violet !important;
 }
 .btn-brand:hover {
   background: radial-gradient(circle, rgba(2, 0, 36, 0.017) 0%, rgba(9, 9, 121, 0) 35%, rgba(0, 213, 255, 0) 100%) !important;
@@ -18,4 +23,7 @@
 }
 .bg-brand{
   background-color: violet !important;
+}
+.brand{
+  color: violet !important;
 }
