@@ -1,19 +1,23 @@
+
+.body{
+  font-family: 'Nunito Sans', sans-serif;
+}
 .btn-brand {
-  background: violet !important;
+  background: #00308F !important;
   color: #ffffff !important;
-  border: 2px solid violet !important;
+  border: 2px solid linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%) !important;
 }
 .btn-outline-brand{
   color: #ffffff !important;
-  border: 2px solid violet !important;
+  border: 2px solid #00308F !important;
 }
 .btn-brand:hover {
-  background: radial-gradient(circle, rgba(2, 0, 36, 0.017) 0%, rgba(9, 9, 121, 0) 35%, rgba(0, 213, 255, 0) 100%) !important;
-  border: 1px solid purple !important;
-  color: purple !important;
+  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%) !important;
+  /* border: 1px solid p#00308F !important; */
+  color: white !important;
 }
 .btn-brand:active{
-  background-color: aqua !important;
+  background-color:#00308F !important;
   box-shadow: 5px black solid;
 }
 
@@ -22,8 +26,52 @@
   font-size: 1.5rem;
 }
 .bg-brand{
-  background-color: violet !important;
+  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%) !important;
+  color: aliceblue;
 }
 .brand{
-  color: violet !important;
+  color: #00308F!important;
+}
+.naira{
+  text-decoration: double line-through;
+}
+.footer{
+  background:  #00308F!important;
+  color: aliceblue;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 300;
+}
+.footer-link{
+  color: aliceblue;
+  text-decoration: none;
+  font-family: 'Nunito Sans', sans-serif;
+  
+}
+.footer-link:hover{
+  text-decoration: underline;
+  color: aliceblue;
+  
+}
+
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+      
+    opacity: 0;
+    color: #a91616;
+  }
+}
+.brand-logo-effect{
+  opacity: 0.7;
+  filter: grayscale(100%);
+}
+.brand-logo-effect:hover,.brand-logo-effect:focus{
+  opacity: 1;
+  filter:none;
+  transform: scale(1.2);
+  transition: all 0.5s ease-in-out;
 }

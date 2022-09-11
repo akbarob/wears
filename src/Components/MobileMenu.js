@@ -22,7 +22,7 @@ export default function MobileMenu(props){
                 </Button>
             </Offcanvas.Header>
             <Offcanvas.Title>
-                <Nav variant="pills" defaultActiveKey="/women" className="">
+                <Nav variant="pills"  defaultActiveKey="/women" className="brand">
                     <Row className="mx-2 text-center">
                         <Col>
                         <Nav.Item>

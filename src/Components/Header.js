@@ -21,8 +21,8 @@ export default function Header(){
     }
 
     return(
-        <Navbar bg="brand" sticky="top">
-            <Button className="d-md-none ms-3" onClick={handleMobileMenu}>
+        <Navbar bg="brand" sticky="top" style={{height: '56px'}}>
+            <Button variant="outline-brand" className="d-md-none ms-3" onClick={handleMobileMenu}>
                 <FaBars size={20} className='my-1 mx-1'/>
             </Button>
             <Navbar.Brand className="ms-5">
@@ -35,11 +35,15 @@ export default function Header(){
             <div className="d-none d-md-block col-7">
                 <Nav>
                     <Nav.Item>
-                        <NavLink to='/women' className='nav-link text-warning  px-3 py-3 m-w'> WOMEN</NavLink>
+                        <NavLink to='/women' className='nav-link text-warning  px-3 py-3 '> WOMEN</NavLink>
                     </Nav.Item>
-                    <div className="vr mx-3"></div>                        
+                    <div className="d-flex align-items-center" style={{height: '56px'}} >
+                   <div className="vr mx-3  align-self-center"></div>    
+                   </div>
+                        
+                                         
                     <Nav.Item>
-                        <NavLink to='/men' className='nav-link text-light  px-3 py-3 m-w'> MEN</NavLink>
+                        <NavLink to='/men' className='nav-link text-light  px-3 py-3 '> MEN</NavLink>
                     </Nav.Item>
                     <Nav.Item className="d-flex align-self-center mx-auto">
                         <Form>
