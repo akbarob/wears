@@ -5,7 +5,7 @@ import { Button, Row, Col } from "react-bootstrap";
 export default function Footer(){
     return(
             <div className=" footer mt-3 py-3 ">
-                <div className="d-none d-md-block">
+                <div className=" container d-none d-md-block">
                     <Row>
                         <Col className="mx-auto col-3">
                             <h4> Help & Information</h4>

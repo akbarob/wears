@@ -4,6 +4,7 @@ import Women from "../Women/women"
 import HomePage from "../Homepage"
 import { propTypes } from "react-bootstrap/esm/Image"
 import Bag from "../bag"
+import Signin from "../signIn"
 export default function AnimatedRoutes(props){
     return(
         <Routes>
@@ -13,6 +14,9 @@ export default function AnimatedRoutes(props){
             <Route path="/women" element={<Women women={props.women}/>} />
             <Route path ="/women/:itemId" element={<props.WomenId/>}/>
             <Route path="/bag" element={<Bag />} />
+
+            <Route path="/signin" element={<Signin/>}/>
+
 
 
             <Route path='*' element={<Navigate to='/'/>}/>

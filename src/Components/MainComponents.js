@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import MenDetails from "./Men/menDetails";
 import WomenDetails from'./Women/womenDetails'
 import Footer from "./Footer";
+import { actions} from "react-redux-form";
 
 export default function Main(){
     const disptach = useDispatch()

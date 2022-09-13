@@ -1,4 +1,4 @@
-import { Button, Image, Navbar, Nav, NavDropdown, Form, Row, Col,InputGroup, Badge} from "react-bootstrap";
+import { Button, Image, Navbar, Nav, NavDropdown, Form, Row, Col,InputGroup, Badge, Modal, FormControl, } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import {FaBars,FaRegUser,FaBoxOpen }from 'react-icons/fa'
 import {FiSearch} from 'react-icons/fi'
@@ -27,7 +27,7 @@ export default function Header(){
             </Button>
             <Navbar.Brand className="ms-5">
                 <NavLink to='/'>
-                    <Image src="images/wears-Logo4.png" style={{width:"2.5rem"}}/>
+                    <Image src="images/Group 2.svg" style={{width:"5rem"}}/>
                 </NavLink>
             </Navbar.Brand>
 
@@ -35,15 +35,14 @@ export default function Header(){
             <div className="d-none d-md-block col-7">
                 <Nav>
                     <Nav.Item>
-                        <NavLink to='/women' className='nav-link text-warning  px-3 py-3 '> WOMEN</NavLink>
+                        <NavLink to='/women' className='nav-link  fw-bolder px-3 py-3 '> WOMEN</NavLink>
                     </Nav.Item>
                     <div className="d-flex align-items-center" style={{height: '56px'}} >
                    <div className="vr mx-3  align-self-center"></div>    
                    </div>
-                        
-                                         
+                   
                     <Nav.Item>
-                        <NavLink to='/men' className='nav-link text-light  px-3 py-3 '> MEN</NavLink>
+                        <NavLink to='/men' className='nav-link fw-bolder px-3 py-3 '> MEN</NavLink>
                     </Nav.Item>
                     <Nav.Item className="d-flex align-self-center mx-auto">
                         <Form>
@@ -83,7 +82,7 @@ export default function Header(){
                             
                         </NavDropdown>
                         <Nav.Item>
-                            <NavLink to='#' className='nav-link text-light my-2 px-2 d-md-none' > <FiSearch size={25}/></NavLink>
+                            <NavLink to='#' className='nav-link text-light my-2 px-2 d-md-none' onClick={toggleModal}> <FiSearch size={25}/></NavLink>
                         </Nav.Item>
                         <Nav.Item>
                             <NavLink to='#' className='nav-link text-light my-2 px-2 d-md-none' > <BsPerson size={25}/></NavLink>
@@ -93,7 +92,7 @@ export default function Header(){
                         </Nav.Item>
                         <Nav.Item>
                         
-                            <NavLink to='/bag' className='nav-link text-light my-2 px-3'> 
+                            <NavLink to='/bag' className='nav-link text-light my-2'> 
                             <div className="">
                             <BsHandbag size={25}/>
 
@@ -101,8 +100,37 @@ export default function Header(){
                             </div>
                             </NavLink>
                         </Nav.Item>
+                        
                     </Nav> 
                     <MobileMenu show={Mobilemenu} onHide={handleMobileMenu}/>
+                    <Modal show={showModal} onHide={toggleModal}>
+                <Modal.Body>
+                    <InputGroup>
+                        <FormControl
+                        autoFocus
+                            size="sm"
+                            placeholder="search for items and brands"
+                            aria-label="search for items and brands"
+                            className="bg-light border-0 shadow-none col-12"/>
+                            <InputGroup.Text className="bg-light border-0">
+                            <FiSearch size={25}/>
+                            </InputGroup.Text>
+                    </InputGroup>
+                </Modal.Body>
+                <Row className="pb-2">
+                    <Col className="offset-8">
+                        <Button size="sm" variant="outline-primary" onClick={toggleModal}>
+                        Search
+                        </Button>
+                    </Col>
+        
+                <Col>
+                    <Button size="sm" variant="outline-danger" onClick={toggleModal}>
+                        Cancel
+                    </Button>
+                </Col>
+                </Row>
+            </Modal>
         </Navbar>
     )
 }

@@ -56,14 +56,18 @@ function RenderMenItems(props){
 }
 export default function Women (props){
     return(
-        <div className="text-center bg-light header py-5">
-            <Button variant='danger'>Sale</Button>
-            <h3>Whooping 25% off on all items bought Today!!! </h3>
-            <h4>ALREADY UP TO 80% OFF</h4>
-            <h6>With code : <strong className="blink_me text-warning">Badak25</strong></h6>
+        <div className="text-center bg-light header py-3">
+            <div className='femalehero'>
+                <h2 variant='danger' className=''><em>Sale</em></h2>
+                <h3>Whooping 25% off on all items bought Today ! ! ! </h3>
+                <h4>ALREADY UP TO 80% OFF</h4>
+                <h6>With code : <strong className="blink_me text-warning">Badak25</strong></h6>
+
+            </div>
+            
 
             
-            <div className="row pb-5">
+            <div className=" container pb-5">
               <RenderMenItems women={props.women}/>
             </div>
 

@@ -1,5 +1,5 @@
 import { Offcanvas, Button, Nav,Row, Col, Accordion , Image} from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
 import {GrClose} from 'react-icons/gr'
 import {BsPerson} from 'react-icons/bs'
 import {FaBars,FaRegUser,FaBoxOpen }from 'react-icons/fa'
@@ -14,10 +14,10 @@ export default function MobileMenu(props){
         <Offcanvas show={props.show} onHide={props.onHide} >
             <Offcanvas.Header > 
                 <NavLink to='/' className='mx-auto ps-5'>
-                    <Image src="images/wears-Logo4.png" style={{width:"2.5rem"}}/>
+                    <Image src="images/Group 2.svg" style={{width:"5rem"}}/>
                 </NavLink>
             
-                <Button variant="outline-brand" onClick={props.onHide}>
+                <Button variant="" onClick={props.onHide}>
                     <GrClose className="text-danger"/>
                 </Button>
             </Offcanvas.Header>
@@ -41,7 +41,10 @@ export default function MobileMenu(props){
             <Offcanvas.Body>
                     <div className=" mb-2">
                         <Row >
-                            <Col xs={4} className="text-center mx-auto">Sign in</Col>
+                            <Link to='signin'>
+                                <Col xs={4} className="text-center mx-auto">Sign in</Col>
+                            </Link>
+                            
                             <Col xs={4}>Join</Col>
                         </Row>
                     </div>
