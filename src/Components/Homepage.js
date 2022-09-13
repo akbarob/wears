@@ -55,7 +55,7 @@ function MenCards(props){
 
     const man = get.map(guy=>{
         return(
-            <div key={guy._id}  className=" col-12 col-md-5 col-lg-2  mx-auto mt-5 text-center" >
+            <div key={guy._id}  className=" col-12 col-sm-5 col-lg-2  mx-auto mt-5 text-center" >
                 <Card style={{ width: '10rem',  }} className='mx-auto border-0'>
                     <Link to={`/men/${guy._id}`} className="text-decoration-none text-dark">
                     <Card.Img variant="top" src={guy.image} alt={guy.name}  />
@@ -94,7 +94,7 @@ function WomenCards(props){
 
   const woman = get.map(lady=>{
       return(
-          <div key={lady._id}  className=" col-12 col-md-5 col-lg-2  mx-auto mt-5 text-center" >
+          <div key={lady._id}  className=" col-12 col-sm-5 col-lg-2  mx-auto mt-5 text-center" >
               <Card style={{ width: '10rem',  }} className='mx-auto border-0'>
                   <Link to={`/men/${lady._id}`} className="text-decoration-none text-dark">
                   <Card.Img variant="top" src={lady.image} alt={lady.name}  />

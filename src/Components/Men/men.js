@@ -23,7 +23,7 @@ function RenderMenItems(props){
         const Men = props.men.Men.map(guy =>{
             
         return(
-            <div  key={guy._id}   className="col-12 col-md-5 col-lg-4 mx-auto mt-5">
+            <div  key={guy._id}   className="col-12 col-sm-5 col-lg-4 mx-auto mt-5">
                 <Card style={{ width: '15rem',  }} className='mx-auto border-0'>
                     <Link to={`/men/${guy._id}`} className="text-decoration-none text-dark">
                     <Card.Img variant="top" src={guy.image} alt={guy.name}/>
