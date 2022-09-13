@@ -1,4 +1,4 @@
-import { Button, Image, Navbar, Nav, NavDropdown, Form, Row, Col,InputGroup} from "react-bootstrap";
+import { Button, Image, Navbar, Nav, NavDropdown, Form, Row, Col,InputGroup, Badge} from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import {FaBars,FaRegUser,FaBoxOpen }from 'react-icons/fa'
 import {FiSearch} from 'react-icons/fi'
@@ -92,7 +92,14 @@ export default function Header(){
                             <NavLink to='#' className='nav-link text-light my-2 px-2'> <BsHeart size={25}/></NavLink>
                         </Nav.Item>
                         <Nav.Item>
-                            <NavLink to='#' className='nav-link text-light my-2 px-3'> <BsHandbag size={25}/></NavLink>
+                        
+                            <NavLink to='/bag' className='nav-link text-light my-2 px-3'> 
+                            <div className="">
+                            <BsHandbag size={25}/>
+
+                            <Badge className="rounded-pill bg-light brand text-danger  position-absolute top-0 ">2</Badge>
+                            </div>
+                            </NavLink>
                         </Nav.Item>
                     </Nav> 
                     <MobileMenu show={Mobilemenu} onHide={handleMobileMenu}/>

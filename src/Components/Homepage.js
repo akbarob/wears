@@ -1,8 +1,10 @@
-import {Carousel} from 'react-bootstrap'
-export default function HomePage(){
+import {Carousel,Card, Button,Badge,Row,Col, Image} from 'react-bootstrap'
+import { Link } from "react-router-dom"
+import GrowExample from '../Loading'
+
+function HomeCarousel(){
     return(
-        <div>
-            <Carousel variant="dark">
+        <Carousel variant="dark" className='mt-2'>
       <Carousel.Item>
         <img
           className="d-block w-100"
@@ -39,6 +41,136 @@ export default function HomePage(){
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+    )
+}
+
+function MenCards(props){
+    let use = props.men.Men;
+    function getMultipleRandom(use , num) {
+        const shuffled = [...use].sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, num);
+    }
+    const get = getMultipleRandom(use, 2) 
+    console.log(get)
+
+    const man = get.map(guy=>{
+        return(
+            <div key={guy._id}  className=" col-12 col-md-5 col-lg-2  mx-auto mt-5 text-center" >
+                <Card style={{ width: '10rem',  }} className='mx-auto border-0'>
+                    <Link to={`/men/${guy._id}`} className="text-decoration-none text-dark">
+                    <Card.Img variant="top" src={guy.image} alt={guy.name}  />
+                    <Card.ImgOverlay> <Badge className="rounded-pill bg-transparent text-danger  position-absolute top-1 start-0">{guy.discount}</Badge></Card.ImgOverlay>
+                    <Card.Body>
+                        <Card.Title><strong>{guy.name}</strong></Card.Title>
+                        {/* 
+                        <Card.Text>
+                        {guy.description}
+                        <strong className="text-danger">{guy.price}</strong> <span className="text-decoration-line-through text-muted">{guy.oldprice}</span>
+                        </Card.Text> */}
+                    </Card.Body>
+                    </Link>
+                </Card>
+            </div>
+        )
+    })
+    return(
+        <div className='row'>
+            {man}
+        </div>
+        
+    )
+        
+    
+}
+
+function WomenCards(props){
+  let use = props.women.Women;
+  function getMultipleRandom(use , num) {
+      const shuffled = [...use].sort(() => 0.5 - Math.random());
+      return shuffled.slice(0, num);
+  }
+  const get = getMultipleRandom(use, 2) 
+  console.log(get)
+
+  const woman = get.map(lady=>{
+      return(
+          <div key={lady._id}  className=" col-12 col-md-5 col-lg-2  mx-auto mt-5 text-center" >
+              <Card style={{ width: '10rem',  }} className='mx-auto border-0'>
+                  <Link to={`/men/${lady._id}`} className="text-decoration-none text-dark">
+                  <Card.Img variant="top" src={lady.image} alt={lady.name}  />
+                  <Card.ImgOverlay> <Badge className="rounded-pill bg-transparent text-danger  position-absolute top-1 start-0">{lady.discount}</Badge></Card.ImgOverlay>
+                  <Card.Body>
+                      <Card.Title><strong>{lady.name}</strong></Card.Title>
+                      {/* 
+                      <Card.Text>
+                      {guy.description}
+                      <strong className="text-danger">{lady.price}</strong> <span className="text-decoration-line-through text-muted">{lady.oldprice}</span>
+                      </Card.Text> */}
+                  </Card.Body>
+                  </Link>
+              </Card>
+          </div>
+      )
+  })
+  return(
+      <div className='row'>
+          {woman}
+      </div>
+      
+  )
+    
+
+}
+function Brandslogos(){
+  return(
+      <div className="container text-center">
+          <Row>
+              
+             
+              <Col md={2}  xs={4}>
+                  <Image src="images/Tommy_Hilfiger-Logo-PNG1.png"  style={{width:"5rem"}} className='brand-logo-effect' />
+              </Col>
+              <Col md={2} xs={4}>
+                  <Image src="images/Ralph_Lauren-Logo-PNG7.png"  style={{width:"5rem"}} className='brand-logo-effect'/>
+              </Col >
+              <Col md={2}  xs={4}>
+                  <Image src="images/Supreme-Logo-PNG5.png"  style={{width:"5rem"}} className='brand-logo-effect'/>
+              </Col>
+              <Col md={2} xs={4}>
+                  <Image src="images/H_M-Logo-PNG2.png"  style={{width:"5rem"}} className='brand-logo-effect'/>
+              </Col>
+              <Col md={2} xs={4}>
+                  <Image src="images/Louis_Vuitton-Logo-PNG13.png"  style={{width:"5rem"}} className='brand-logo-effect'/>
+              </Col>
+              <Col md={2} xs={4}>
+                  <Image src="images/Adidas-Logo-PNG13.png"  style={{width:"5rem"}}  className='brand-logo-effect'/>
+              </Col>
+              
+          
+          </Row>
+          
+
+      </div>
+  )
+}
+export default function HomePage(props){
+    return(
+        <div>
+            <HomeCarousel/>
+            <div className='container'>
+            <Row>
+              <Col md>
+                <MenCards men={props.men}/>
+              </Col>
+                <Col>
+                <WomenCards women={props.women}/>
+                </Col>
+                
+            </Row>
+            <Brandslogos/>
+
+            </div>
+            
 
         </div>
     )
