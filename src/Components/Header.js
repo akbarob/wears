@@ -91,12 +91,10 @@ export default function Header(){
                             <NavLink to='#' className='nav-link text-light my-2 px-2'> <BsHeart size={25}/></NavLink>
                         </Nav.Item>
                         <Nav.Item>
-                        
-                            <NavLink to='/bag' className='nav-link text-light my-2'> 
-                            <div className="">
-                            <BsHandbag size={25}/>
-
-                            <Badge className="rounded-pill bg-light brand text-danger  position-absolute top-0 ">2</Badge>
+                            <NavLink to='/bag' className='nav-link text-light my-2 px-2'> 
+                            <div className='position-relative'>
+                            <Badge className="rounded-pill bg-light brand text-danger  position-absolute top-0 start-100 translate-middle">2</Badge>
+                            <BsHandbag size={25} />
                             </div>
                             </NavLink>
                         </Nav.Item>
@@ -118,7 +116,7 @@ export default function Header(){
                     </InputGroup>
                 </Modal.Body>
                 <Row className="pb-2">
-                    <Col className="offset-8">
+                    <Col className="offset-6">
                         <Button size="sm" variant="outline-primary" onClick={toggleModal}>
                         Search
                         </Button>
