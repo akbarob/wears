@@ -8,6 +8,7 @@ import MenDetails from "./Men/menDetails";
 import WomenDetails from'./Women/womenDetails'
 import Footer from "./Footer";
 import { actions} from "react-redux-form";
+import ScrollToTop from "./ScrollToTop";
 
 export default function Main(){
     const disptach = useDispatch()
@@ -17,7 +18,7 @@ export default function Main(){
     useEffect(()=>{
         disptach(fetchMen())
         disptach(fetchWomen())
-    },[])
+    },[disptach])
 
     function MenId(){
         const {itemId} = useParams()
@@ -42,10 +43,15 @@ export default function Main(){
 
     return(
         <div>
+            <ScrollToTop />
             <Header/>
+            <div  style={{minHeight: "75vh"}}>
             <AnimatedRoutes
              men={men} MenId={MenId}
-             women ={women } WomenId={WomenId} />
+             women ={women } WomenId={WomenId} 
+            />
+            </div>
+            
             <Footer/>
         </div>
     )

@@ -41,11 +41,12 @@ export default function MobileMenu(props){
             <Offcanvas.Body>
                     <div className=" mb-2">
                         <Row >
-                            <Link to='signin'>
-                                <Col xs={4} className="text-center mx-auto">Sign in</Col>
-                            </Link>
-                            
-                            <Col xs={4}>Join</Col>
+                            <Col xs={4} className="text-center mx-auto">
+                                <Link to='signin'>Sign in</Link>
+                            </Col>
+                            <Col xs={4} className="text-center mx-auto">
+                                <Link to='signin'>Join</Link>
+                            </Col>
                         </Row>
                     </div>
                 <Nav defaultActiveKey="/home" className="flex-column peen">

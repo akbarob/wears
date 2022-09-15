@@ -1,5 +1,7 @@
 import {Breadcrumb, Button, Image, Form }from 'react-bootstrap'
 import {BsHandbag,} from 'react-icons/bs'
+import {motion} from 'framer-motion'
+
 
 function RenderItem(props){
 
@@ -52,7 +54,9 @@ function RenderInfo(props){
 export default function MenDetails(props){
     console.log(props.lady.image)
     return(
-        <div className="container">
+        <motion.div className="container"
+        initial={{opacity:0,  }}
+            animate={{opacity:1, x: 0, transition:{delay: .5 }}}>
             <div className="row">
             <Breadcrumb className='py-2'>
                 <Breadcrumb.Item href="/women">Women </Breadcrumb.Item>
@@ -79,6 +83,6 @@ export default function MenDetails(props){
             </div>
             
 
-        </div>
+        </motion.div>
     )
 }

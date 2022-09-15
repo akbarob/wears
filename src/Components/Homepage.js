@@ -1,6 +1,7 @@
 import {Carousel,Card, Button,Badge,Row,Col, Image} from 'react-bootstrap'
 import { Link } from "react-router-dom"
 import GrowExample from '../Loading'
+import {motion} from 'framer-motion'
 
 function HomeCarousel(){
     return(
@@ -55,7 +56,7 @@ function MenCards(props){
 
     const man = get.map(guy=>{
         return(
-            <div key={guy._id}  className=" col-12 col-sm-5 col-lg-2  mx-auto mt-5 text-center" >
+            <div key={guy._id}  className=" col-5  col-lg-2  mx-auto mt-5 text-center" >
                 <Card style={{ width: '10rem',  }} className='mx-auto border-0'>
                     <Link to={`/men/${guy._id}`} className="text-decoration-none text-dark">
                     <Card.Img variant="top" src={guy.image} alt={guy.name}  />
@@ -94,7 +95,7 @@ function WomenCards(props){
 
   const woman = get.map(lady=>{
       return(
-          <div key={lady._id}  className=" col-12 col-sm-5 col-lg-2  mx-auto mt-5 text-center" >
+          <div key={lady._id}  className=" col-5 col-lg-2   mx-auto mt-5 text-center" >
               <Card style={{ width: '10rem',  }} className='mx-auto border-0'>
                   <Link to={`/men/${lady._id}`} className="text-decoration-none text-dark">
                   <Card.Img variant="top" src={lady.image} alt={lady.name}  />
@@ -155,7 +156,10 @@ function Brandslogos(){
 }
 export default function HomePage(props){
     return(
-        <div>
+        <motion.div
+            initial={{opacity:0, x: -300}}
+            animate={{opacity:1, x: 0, transition:{duration:0.8}}}
+            exit={{opacity:0, x: -300,}}>
             <HomeCarousel/>
             <div className='container'>
             <Row>
@@ -172,6 +176,6 @@ export default function HomePage(props){
             </div>
             
 
-        </div>
+        </motion.div>
     )
 }

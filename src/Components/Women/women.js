@@ -1,6 +1,7 @@
 import {Button, Card, Badge} from 'react-bootstrap'
 import { Link } from "react-router-dom"
 import GrowExample from '../../Loading'
+import {motion} from 'framer-motion'
 
 
 function RenderMenItems(props){
@@ -24,8 +25,8 @@ function RenderMenItems(props){
         const Women = props.women.Women.map(lady =>{
             
         return(
-            <div  key={lady._id}   className="col-12 col-sm-5 col-lg-4 mx-auto mt-5">
-                <Card style={{ width: '15rem',  }} className='mx-auto border-0'>
+            <div  key={lady._id}   className="col-5 col-lg-4 mx-auto mt-5">
+                <Card  className='mx-auto border-0'>
                     <Link to={`/women/${lady._id}`} className="text-decoration-none text-dark">
                     <Card.Img variant="top" src={lady.image} alt={lady.name}/>
                     <Card.ImgOverlay> <Badge className="rounded-pill bg-transparent text-danger  position-absolute top-1 start-0">{lady.discount}</Badge></Card.ImgOverlay>
@@ -56,7 +57,10 @@ function RenderMenItems(props){
 }
 export default function Women (props){
     return(
-        <div className="text-center bg-light header py-3">
+        <motion.div className="text-center bg-light header py-3"
+            initial={{opacity:0, x: -300}}
+            animate={{opacity:1, x: 0, transition:{duration:0.8}}}
+            exit={{opacity:0, x: -300,}}>
             <div className='femalehero'>
                 <h2 variant='danger' className=''><em>Sale</em></h2>
                 <h3>Whooping 25% off on all items bought Today ! ! ! </h3>
@@ -71,6 +75,6 @@ export default function Women (props){
               <RenderMenItems women={props.women}/>
             </div>
 
-        </div>
+        </motion.div>
     )
 }

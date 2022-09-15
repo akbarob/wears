@@ -1,4 +1,4 @@
-import { Button, Image, Navbar, Nav, NavDropdown, Form, Row, Col,InputGroup, Badge, Modal, FormControl, } from "react-bootstrap";
+import { Button, Image, Navbar, Nav, NavDropdown, Form, Row, Col,InputGroup, Badge, Modal, FormControl, Container} from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import {FaBars,FaRegUser,FaBoxOpen }from 'react-icons/fa'
 import {FiSearch} from 'react-icons/fi'
@@ -22,10 +22,11 @@ export default function Header(){
 
     return(
         <Navbar bg="brand" sticky="top" style={{height: '56px'}}>
+            <Container>
             <Button variant="outline-brand" className="d-md-none ms-3" onClick={handleMobileMenu}>
                 <FaBars size={20} className='my-1 mx-1'/>
             </Button>
-            <Navbar.Brand className="ms-5">
+            <Navbar.Brand className="ms-auto">
                 <NavLink to='/'>
                     <Image src="images/Group 2.svg" style={{width:"5rem"}}/>
                 </NavLink>
@@ -46,7 +47,7 @@ export default function Header(){
                     </Nav.Item>
                     <Nav.Item className="d-flex align-self-center mx-auto">
                         <Form>
-                        <InputGroup style={{width:'17rem'}}>
+                        <InputGroup >
                             <Form.Control
                                 size="sm"
                                 placeholder="search for items and brands..."
@@ -62,14 +63,14 @@ export default function Header(){
 
                 </Nav>
             </div>
-            <Nav className="ms-auto me-5">
+            <Nav className=" ms-auto me-auto">
                 
                 <NavDropdown
                     color="light"
                     id='profile-dropdown'
                     menuVariant="light"
-                    title={<BsPerson size={27} className='text-light '/>}
-                    className='nav-link px-2 d-none d-md-block'
+                    title={<BsPerson size={27} className='text-light'/>}
+                    className='nav-link  px-2 d-none d-md-block'
                         >
                             <NavDropdown.Item href="#action/3.1"> <BsPerson className="mx-2"/>My account</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">
@@ -129,6 +130,7 @@ export default function Header(){
                 </Col>
                 </Row>
             </Modal>
+            </Container>
         </Navbar>
     )
 }
