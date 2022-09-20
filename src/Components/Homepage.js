@@ -56,13 +56,13 @@ function MenCards(props){
 
     const man = get.map(guy=>{
         return(
-            <div key={guy._id}  className=" col-5  col-lg-2  mx-auto mt-5 text-center" >
-                <Card style={{ width: '10rem',  }} className='mx-auto border-0'>
+            <div key={guy._id}  className=" col-10 col-md-5  col-lg-4  mx-auto mt-5 text-center" >
+                <Card  className='mx-auto border-0'>
                     <Link to={`/men/${guy._id}`} className="text-decoration-none text-dark">
                     <Card.Img variant="top" src={guy.image} alt={guy.name}  />
                     <Card.ImgOverlay> <Badge className="rounded-pill bg-transparent text-danger  position-absolute top-1 start-0">{guy.discount}</Badge></Card.ImgOverlay>
                     <Card.Body>
-                        <Card.Title><strong>{guy.name}</strong></Card.Title>
+                        <Card.Title><h6> <strong>{guy.name}</strong></h6></Card.Title>
                         {/* 
                         <Card.Text>
                         {guy.description}
@@ -95,13 +95,13 @@ function WomenCards(props){
 
   const woman = get.map(lady=>{
       return(
-          <div key={lady._id}  className=" col-5 col-lg-2   mx-auto mt-5 text-center" >
-              <Card style={{ width: '10rem',  }} className='mx-auto border-0'>
+          <div key={lady._id}  className=" col-10 col-md-5  col-lg-4   mx-auto mt-5 text-center" >
+              <Card  className='mx-auto border-0'>
                   <Link to={`/men/${lady._id}`} className="text-decoration-none text-dark">
                   <Card.Img variant="top" src={lady.image} alt={lady.name}  />
                   <Card.ImgOverlay> <Badge className="rounded-pill bg-transparent text-danger  position-absolute top-1 start-0">{lady.discount}</Badge></Card.ImgOverlay>
                   <Card.Body>
-                      <Card.Title><strong>{lady.name}</strong></Card.Title>
+                      <Card.Title><h6> <strong>{lady.name}</strong></h6></Card.Title>
                       {/* 
                       <Card.Text>
                       {guy.description}
@@ -162,8 +162,8 @@ export default function HomePage(props){
             exit={{opacity:0, x: -300,}}>
             <HomeCarousel/>
             <div className='container'>
-            <Row>
-              <Col md>
+            <Row className='mx-auto'>
+              <Col >
                 <MenCards men={props.men}/>
               </Col>
                 <Col>
