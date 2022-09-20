@@ -124,7 +124,7 @@ function WomenCards(props){
 }
 function Brandslogos(){
   return(
-      <div className="container text-center">
+      <div className="container text-center my-5">
           <Row>
               
              
